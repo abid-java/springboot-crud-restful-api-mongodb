@@ -1,7 +1,10 @@
 package com.app.samples.springboot.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +24,7 @@ public class StudentController {
 	@Autowired
 	private StudentSequenceGeneratorService studentSequenceGeneratorService;
 	
-	@PostMapping("/createstudent")
+	@PostMapping("/createStudent")
 	public ResponseEntity<Student> createStudent(@RequestBody Student student) {
 		Student savedStudent = null;
 		ResponseEntity<Student> responseEntity = null;
@@ -32,5 +35,13 @@ public class StudentController {
 			responseEntity = ResponseEntity.ok().body(savedStudent);
 		}
 		return responseEntity;
-	} 
+	}
+	
+	@GetMapping("/getAllStudents")
+	public ResponseEntity<List<Student>> getAllStudents() {
+		ResponseEntity<List<Student>> responseEntity = null;
+		List<Student> studentsList = studentRepository.findAll();
+		responseEntity = ResponseEntity.ok().body(studentsList);
+		return responseEntity;
+	}
 }
