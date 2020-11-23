@@ -1,5 +1,6 @@
 package com.app.samples.springboot.service;
 
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import com.app.samples.springboot.entity.SequenceId;
+import com.app.samples.springboot.entity.Student;
 import com.app.samples.springboot.repository.StudentRepository;
 
 // TODO: Auto-generated Javadoc
@@ -59,6 +61,25 @@ public class StudentSequenceGeneratorService {
 			counter = 1;
 		}
 		return counter;
+	}
+	
+	/**
+	 * Existing student.
+	 *
+	 * @param studentId the student id
+	 * @return the student
+	 */
+	public Student existingStudent(Long studentId) {
+		Student existingStudent = null;
+		List<Student> studentsList = studentRepository.findAll();
+		for(Student student : studentsList) {
+			if(student != null) {
+				if(studentId.equals(student.getStudentId())) {
+					existingStudent = student;
+				} 
+			}
+		}
+		return existingStudent;
 	}
 	
 	

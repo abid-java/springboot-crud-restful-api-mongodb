@@ -40,7 +40,7 @@ public class SpringbootCrudRestfulApiMongodbApplication {
 	public Docket swaggerConfiguration() {
 		return new Docket(DocumentationType.SWAGGER_2)
 						.select()
-						.paths(PathSelectors.ant("/students/*"))
+						.paths(PathSelectors.ant("/student/*"))
 						.apis(RequestHandlerSelectors.basePackage("com.app.samples.springboot"))
 						.build()
 						.apiInfo(apiInfo());
