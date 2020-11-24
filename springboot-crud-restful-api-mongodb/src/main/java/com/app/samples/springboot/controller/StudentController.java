@@ -129,7 +129,7 @@ public class StudentController {
 	 * @throws ResourceNotFoundException the resource not found exception
 	 */
 	@DeleteMapping("/deleteStudent/{id}")
-	public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable(value = "id") Long studentId) throws ResourceNotFoundException {
+	public ResponseEntity<Map<String, Boolean>> deleteStudent(@PathVariable(value = "id") Long studentId) throws ResourceNotFoundException {
 		ResponseEntity<Map<String, Boolean>> responseEntity = null;
 		Map<String, Boolean> response = null;
 		Student existingStudent = studentSequenceGeneratorService.existingStudent(studentId);
