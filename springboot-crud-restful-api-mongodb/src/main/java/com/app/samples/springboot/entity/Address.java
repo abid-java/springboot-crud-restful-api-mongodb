@@ -29,7 +29,6 @@ public class Address {
 	/**
 	 * Instantiates a new address.
 	 *
-	 * @param addressId the address id
 	 * @param city the city
 	 * @param state the state
 	 * @param country the country
