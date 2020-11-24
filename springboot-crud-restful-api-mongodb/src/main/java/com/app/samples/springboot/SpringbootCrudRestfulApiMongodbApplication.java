@@ -19,7 +19,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * The Class SpringbootCrudRestfulApiMongodbApplication.
  */
 @SpringBootApplication
-@EnableSwagger2
+//	@EnableSwagger2
 public class SpringbootCrudRestfulApiMongodbApplication {
 
 	/**
@@ -36,7 +36,7 @@ public class SpringbootCrudRestfulApiMongodbApplication {
 	 *
 	 * @return the docket
 	 */
-	@Bean
+	/* @Bean
 	public Docket swaggerConfiguration() {
 		return new Docket(DocumentationType.SWAGGER_2)
 						.select()
@@ -51,7 +51,7 @@ public class SpringbootCrudRestfulApiMongodbApplication {
 	 *
 	 * @return the api info
 	 */
-	private ApiInfo apiInfo() {
+	/* private ApiInfo apiInfo() {
 		return new ApiInfo("STUDENT API", 
 						   "Sample API for Student Information",
 						   "1.0",
@@ -60,6 +60,6 @@ public class SpringbootCrudRestfulApiMongodbApplication {
 						   "API License",
 						   "https://github.com/abid-java",
 						   Collections.emptyList());
-	}
+	} */
  
 }
